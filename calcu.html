@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+</head>
+
+<body>
+    <h4>Basic Calculator</h4>
+
+    <script>
+        function displayPrompt() {
+            var operator = prompt('Select Operator (* + - /)');
+            var num1 = parseFloat(prompt("Enter First Number:"));
+            var num2 = parseFloat(prompt("Enter Second Number:"));
+            var result;
+
+
+
+            var overlay = document.createElement('div');
+            overlay.id = 'overlay';
+            document.body.appendChild(overlay);
+
+            // Create the centered prompt box
+            var centeredBox = document.createElement('div');
+            centeredBox.id = 'centered-box';
+            document.body.appendChild(centeredBox);
+
+
+            if (operator == "*") {
+                result = num1 * num2;
+                document.write("The Total is: ", result);
+            } else if (operator == "+") {
+                result = num1 + num2;
+                document.write("The Total is: ", result);
+            } else if (operator == "-") {
+                result = num1 - num2;
+                document.write("The Total is: ", result);
+            } else if (operator == "/") {
+                result = num1 / num2;
+                document.write("The Total is: ", result);
+            } else {
+                document.write("Not a number! Please enter the numeber");
+            }
+        }
+
+        window.onload = displayPrompt;
+    </script>
+</body>
+
+</html>
